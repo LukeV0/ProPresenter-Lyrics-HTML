@@ -86,6 +86,10 @@ Connection.prototype.message = function(msg) {
                 if(typeof callback_lyrics_next === 'function') {
                     callback_lyrics_next(text);
                 }
+            } else if (msg.ary[a].acn == "sys") {
+                if(typeof callback_clock === 'function') {
+                    callback_clock(msg.ary[a].txt, this.clockLocale);
+                }
             }
         }
     } else if (msg.acn == "sys") {
